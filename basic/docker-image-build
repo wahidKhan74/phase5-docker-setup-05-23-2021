@@ -1,0 +1,9 @@
+stpe 1 : create Dockerfile
+step 2 : user docker file to build image
+
+#build docker image
+-> sudo docker build -t phpcode -f Dockerfile
+-> sudo docker build -t phpcode .
+
+#run container from custom docker image
+-> sudo docker run --name phpcode-webserver -p 80:80 -d phpcode

@@ -1,0 +1,41 @@
+#docker version
+sudo docker --version
+sudo docker -v
+
+#docker info
+sudo docker info
+
+# list docker images
+sudo docker images
+
+# list docker container
+sudo docker container ls 
+sudo docker ps -a
+
+# docker pull
+sudo docker pull ubuntu
+sudo docker pull mysql
+sudo docker pull alpine
+
+# run container
+-> sudo docker run -it ubuntu /bin/bash  
+
+# run a container with a name
+-> sudo docker run --name webserv-con -it ubuntu /bin/bash 
+   -> apt update
+   -> apt install apache2 -y
+
+#run container with port mapping
+sudo docker run --name webserv-con -p 80:80 -it ubuntu /bin/bash 
+
+# start / stop / restart on docker container
+sudo docker container start  <container-name /container-id>
+sudo docker container restart  <container-name /container-id>
+sudo docker container stop  <container-name /container-id>
+
+# docker remove / delete container
+sudo docker container rm  <container-name /container-id>
+
+# docker remove/ delete image
+sudo docker image rm  <image-name /image-id>
+
