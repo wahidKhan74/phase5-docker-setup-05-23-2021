@@ -1,0 +1,37 @@
+
+# sudo docker swarm --help
+
+# first initialize docker swarm ( cluster )
+-> docker swarm init 
+
+# verify nodes in cluster 
+-> docker node ls
+
+
+# join node 
+sudo docker swarm join --token SWMTKN-1-0i7loxbqpfzi8l0tfwyexe54fej0rqwsasr7yj57mb45gxa82l-6v106dal8eq4trejkhyp039vy 172.31.23.246:2377
+
+# join manager 
+sudo docker swarm join-token manager -> and follow the instructions.
+
+# create docker swarm service 
+-> docker service create -p 80:80 --name webserver phpcode
+
+# list docker swarm service 
+sudo docker service ls
+
+# list  container for service
+sudo docker ps -a
+
+------------------------------------------------------
+2. scaling docker container on docker swarm
+-------------------------------------------------------
+# scale up  service -> increase replica
+-> sudo docker service scale webserver=3
+-> sudo docker service ls
+-> sudo docker ps -a
+
+#scale down service -> decrease replica
+-> sudo docker service scale webserver=1
+-> sudo docker service ls
+-> sudo docker ps -a

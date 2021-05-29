@@ -1,0 +1,23 @@
+# 1 .create a docker hub account
+# 2. create a custom image
+# 3. create a tag for the image
+# 4. verify image tag
+# 5. login docker hub
+# 6. push image
+
+3. create image with tqag
+sudo docker tag <image-name:tage-name>   <user-name/image-name:tagename>
+-> sudo docker tag phpcode:latest wahid74/php-wesite:v1.0.0
+-> sudo docker tag phpcode:latest wahid74/php-wesite:v1.0.1
+-> sudo docker tag phpcode:latest wahid74/php-wesite:v2.0.0
+-> sudo docker tag phpcode:latest wahid74/php-wesite
+
+4. verify image tag
+sudo docker images
+
+5. login docker hub
+sudo docker login
+
+# 6. push image
+sudo docker push  wahid74/php-wesite:v1.0.0
+sudo docker push  wahid74/php-wesite:v1.0.1
