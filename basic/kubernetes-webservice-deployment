@@ -1,0 +1,24 @@
+#list all nodes
+kubectl get node -A
+
+#list all service
+kubectl get service -A
+
+
+#list all namespace
+kubectl get namespaces -A
+
+#create namespace 
+kubectl create namespace deployment
+
+#create a kubenetes deployment pod
+
+kubectl run <pod names>  --image=<image name> --port=<container port>  --generator=run-pod/v1 -n <namespace>
+
+kubectl run  php-pod --image=phpcode --port=80 --generator=run-pod/v1 -n=deployment
+kubectl expose php-pod --port=80 --target-port=80 --type=LoadBalancer
+
+
+Create Kubernetes deployment pod
+kubectl run ecom-webservice2 --image=wahid74/ecom-webservice --port=8989
+kubectl expose deployment/ecom-webservice2 --port=8989 --target-port=8989 --type=LoadBalancer
